@@ -1,0 +1,63 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class All_UI_Manager : MonoBehaviour
+{
+    public static bool bFlip;
+    public static bool MsOn;
+    public static bool Time;
+
+    //public InputField input_name;
+    [SerializeField] private InputField input_name;
+    // Start is called before the first frame update
+    void Start()
+    {
+        bFlip = true;
+        MsOn = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void MyButton_in_UIManager()
+    {
+        
+    }
+
+    //소리 온 오프 버튼
+    public void Sound()
+    {
+        if(bFlip == true)
+        {
+            bFlip = false;
+        } else
+        {
+            bFlip = true;
+        }
+        Debug.Log("Sound button pressed" + bFlip);
+    }
+
+    //30초 남았을때 나타날 메세지
+    public void HurryUp()
+    {
+        //if(Time == 30) { MsOn == true; }
+        Debug.Log("Hurry Up!");
+    }
+
+    //동물을 구했을때(구할 동물과 충돌했을때) 나오는 메세지
+    public void Thanks()
+    {
+        //if(Collide with animal_Object) { MsOn == true; }
+        Debug.Log("Thanks Kid!");
+    }
+
+    public void MyNameBox()
+    {
+        Debug.Log("Input name: " + input_name.text);
+    }
+}
